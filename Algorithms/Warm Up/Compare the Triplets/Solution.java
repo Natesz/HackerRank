@@ -1,11 +1,12 @@
+//Problem: https://www.hackerrank.com/challenges/compare-the-triplets
+//Java 8
+//Function Description:
+//Complete the function compareTriplets in the editor below. 
+//It must return an array of two integers, the first being Alice's score and the second being Bob's.
+
+
 import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.function.*;
-import java.util.regex.*;
 import java.util.stream.*;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
@@ -14,30 +15,24 @@ public class Solution {
 
     // Complete the compareTriplets function below.
     static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
-        List<Integer> list = new ArrayList<Integer>();
-        int alicePoint = 0;
-        int bobPoint = 0;
-        
-        Integer[] aliceArray = new Integer[3];
-        Integer[] bobArray = new Integer[3];
-        
-        aliceArray = a.toArray(aliceArray);
-        bobArray = b.toArray(bobArray);
-        
-        for(int i=0;i<3;i++){
-          if(aliceArray[i]>bobArray[i]){
-              alicePoint++;
-          }else if(aliceArray[i]<bobArray[i]){
-              bobPoint++;
-          }    
+        List<Integer> aliceAndBobScores = new ArrayList<Integer>();
+        int aliceScore = 0;
+        int bobScore = 0;
+
+        for(int i=0;i<a.size();i++){
+            
+            if(a.get(i)>b.get(i)){
+                aliceScore++;
+            }else if(a.get(i)<b.get(i)){
+                bobScore++;
+            }
+            
         }
-        
-        list.add(alicePoint);
-        list.add(bobPoint);
-        
-        return list;
 
+        aliceAndBobScores.add(aliceScore);
+        aliceAndBobScores.add(bobScore);
 
+        return aliceAndBobScores;
     }
 
     public static void main(String[] args) throws IOException {
@@ -65,5 +60,3 @@ public class Solution {
         bufferedWriter.close();
     }
 }
-
-
