@@ -1,3 +1,8 @@
+//Problem: https://www.hackerrank.com/challenges/diagonal-difference
+//Java 8
+//Function Description:
+//Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -10,23 +15,16 @@ public class Solution {
 
     // Complete the diagonalDifference function below.
     static int diagonalDifference(int[][] arr) {
-        
-        int primDiagonal = 0;
-        int secDiagonal = 0;
+        int leftToRigthDiagonal = 0;
+        int rigthToLeftDiagonal = 0;
         for(int i=0;i<arr.length;i++){
-            
-                primDiagonal = primDiagonal + arr[i][i];
-                
-            
+            leftToRigthDiagonal = leftToRigthDiagonal + arr[i][i];
+            //System.out.println(leftToRigthDiagonal);
+            rigthToLeftDiagonal = rigthToLeftDiagonal + arr[i][arr.length-1-i];
+            //System.out.println(rigthToLeftDiagonal);
         }
-        int j=arr.length-1;
-         for(int i=0;i<arr.length;i++){
-            secDiagonal = secDiagonal + arr[i][j];
-             j--;
-        }
-        
-        return Math.abs(primDiagonal-secDiagonal);
 
+        return Math.abs(leftToRigthDiagonal - rigthToLeftDiagonal);
     }
 
     private static final Scanner scanner = new Scanner(System.in);
