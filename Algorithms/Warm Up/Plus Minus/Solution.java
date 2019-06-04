@@ -1,3 +1,9 @@
+//https://www.hackerrank.com/challenges/plus-minus/problem
+//Java 8
+//Function Description:
+//Complete the plusMinus function in the editor below.
+//It should print out the ratio of positive, negative and zero items in the array, each on a separate line rounded to six decimals.
+
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -10,30 +16,24 @@ public class Solution {
 
     // Complete the plusMinus function below.
     static void plusMinus(int[] arr) {
-        int sumPos=0;
-        int sumNeg=0;
-        int sumZero=0;
-        
+        double positive = 0;
+        double negative = 0;
+        double zero = 0;
         for(int i=0;i<arr.length;i++){
-        if(arr[i]>0){
-            sumPos++;
-        }else if(arr[i]<0){
-            sumNeg++;
-        }else{
-            sumZero++;
-        }
+            if(arr[i]>0){
+                positive++;
+            }else if(arr[i]<0){
+                negative++;
+            }else{
+                zero++;
             }
-        
-        double posPercent = (double) sumPos / arr.length;
-        double negPercent = (double) sumNeg / arr.length;
-        double zeroPercent = (double) sumZero / arr.length;
-        
-        System.out.println(posPercent);
-        System.out.println(negPercent);
-        System.out.println(zeroPercent);
+        }
+
+        System.out.println(positive / arr.length);
+        System.out.println(negative / arr.length);
+        System.out.println(zero / arr.length);
 
     }
-
 
     private static final Scanner scanner = new Scanner(System.in);
 
