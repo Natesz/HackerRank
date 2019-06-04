@@ -1,3 +1,9 @@
+//https://www.hackerrank.com/challenges/mini-max-sum/problem
+//Java 8
+//Function Description:
+//Complete the miniMaxSum function in the editor below. 
+//It should print two space-separated integers on one line: the minimum sum and the maximum sum of  of  elements.
+
 import java.io.*;
 import java.math.*;
 import java.security.*;
