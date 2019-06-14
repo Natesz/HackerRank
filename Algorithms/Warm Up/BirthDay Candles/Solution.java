@@ -1,3 +1,9 @@
+//problem: https://www.hackerrank.com/challenges/birthday-cake-candles/problem
+//Java 8
+//You are in charge of the cake for your niece's birthday and have decided the cake will have one candle for each year of her total age. 
+//When she blows out the candles, she’ll only be able to blow out the tallest ones. 
+//Your task is to find out how many candles she can successfully blow out.
+
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -10,15 +16,13 @@ public class Solution {
 
     // Complete the birthdayCakeCandles function below.
     static int birthdayCakeCandles(int[] ar) {
-    long max=ar[0];
-        for(int i =0;i<ar.length;i++){
-            if(ar[i]>max){
-                max=ar[i];
-            }
-        }
-        int count=0;
+        int max = ar[0];
+        int count = 0;
         for(int i=0;i<ar.length;i++){
-            if(ar[i]==max){
+            if(ar[i]>max){
+                max = ar[i];
+                count = 1;
+            }else if(ar[i]==max){
                 count++;
             }
         }
